@@ -149,3 +149,44 @@ function UpScore() {
     score += 1;
     document.getElementById("score").innerText = score;
 }
+
+let startX, startY;
+
+document.addEventListener('touchstart', function(event) {
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+});
+
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault(); // Empêche le défilement pendant le glissement
+    let endX = event.touches[0].clientX;
+    let endY = event.touches[0].clientY;
+
+    let deltaX = endX - startX;
+    let deltaY = endY - startY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Déplacement horizontal
+        if (deltaX > 0 && directionSnake !== "left") {
+            directionSnake = "right";
+        } else if (deltaX < 0 && directionSnake !== "right") {
+            directionSnake = "left";
+        }
+    } else {
+        // Déplacement vertical
+        if (deltaY > 0 && directionSnake !== "up") {
+            directionSnake = "down";
+        } else if (deltaY < 0 && directionSnake !== "down") {
+            directionSnake = "up";
+        }
+    }
+
+    startX = endX;
+    startY = endY;
+});
+
+document.addEventListener('touchend', function(event) {
+    // Réinitialiser les positions de départ
+    startX = null;
+    startY = null;
+});
