@@ -1,0 +1,33 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#menu-container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+}
