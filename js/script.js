@@ -189,4 +189,8 @@ document.addEventListener('touchend', function(event) {
     // Réinitialiser les positions de départ
     startX = null;
     startY = null;
+    event.preventDefault(); // Empêche le défilement après le relâchement du toucher
+
 });
+
+
