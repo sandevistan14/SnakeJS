@@ -1,7 +1,7 @@
 let interval;
 let directionSnake = "left";
 let Matrice = [];
-let Snake = [[10, 10], [10, 11], [10, 12], [10, 13]];
+let Snake = [[10, 20], [10, 21], [10, 22], [10, 23]];
 let score = 0;
 
 function Main() {
